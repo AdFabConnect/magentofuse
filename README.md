@@ -5,13 +5,13 @@ Magento Management Driven by Composer !
 
 This project is directly inspired by http://en.wikipedia.org/wiki/AppFuse
 
-I wanted Magento
-I wanted Magento to be fast
-I wanted Magento to be fast and easy to install
-I wanted Magento to be fast and easy to unit test
-I wanted Magento to be fast and easy to extend 
-I wanted Magento to be fast and easy to skin
-I wanted Magento to be fast and easy to embed new features
+- I wanted Magento
+- I wanted Magento to be fast
+- I wanted Magento to be fast and easy to install
+- I wanted Magento to be fast and easy to unit test
+- I wanted Magento to be fast and easy to extend 
+- I wanted Magento to be fast and easy to skin
+- I wanted Magento to be fast and easy to embed new features
 
 Here you have adfab/magento, a Magento CE rocketed with the best modules and extensions ever created by fabulous people
 
