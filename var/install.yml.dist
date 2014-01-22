@@ -1,4 +1,4 @@
-parameters:
+parameters: 
     locale: fr_FR
     timezone: Europe/Paris
     default_currency: EUR
