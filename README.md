@@ -37,10 +37,21 @@ Much much more to come !
 
 
 #Usage
+## Create a new project
 ```
 composer create-project adfab/magento new-project 1.8.1.0-dev
 ```
-To know which versions of Magento are available check available branches.
+(Check available branches to know which versions of Magento are available)
+
+This command will : 
+- download the Magento version 1.8.1.0
+- Install the PHPUnit module
+- Install the Magento Bootstrap 3 boilerplate
+- Install the Grunt config
+- Enter the installation process : Answer each question including database config.
+
+Once done, update your /etc/hosts file + your web server configuration. Relaunch the web server, and you're ready to go !
+
 
 If you want to launch specific Magento install : 
 ```
