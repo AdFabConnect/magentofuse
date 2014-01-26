@@ -94,7 +94,5 @@ To benefit from this feature, just launch grunt :
 sudo grunt
 ```
 
-Enjoy !
-
 
 Enjoy ;)
