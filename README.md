@@ -52,20 +52,32 @@ This command will :
 
 Once done, update your /etc/hosts file + your web server configuration. Relaunch the web server, and you're ready to go !
 
-
-If you want to launch specific Magento install : 
+## Redo the Magento config + database install
+If you want to launch specific Magento install, check first that there is no app/etc/local.xml file so that the Magento install can be launched. Then : 
 ```
 composer run-script post-install-cmd
 ```
-Many thanks to https://github.com/webgriffe/magento !
+This will run the composer post-install script specifically.
 
-Once the projet is installed you'll be able to dev the frontend directly from Chrome DevTools while keeping updated ALL browsers (incuding mobiles)
-connected to your magento website.
+## Create a new theme
+Once the projet is installed you'll be able to dev the frontend directly from Chrome DevTools while keeping updated ALL browsers (incuding mobiles) connected to your magento website.
 
-(You have to have NodeJS and Grunt installed on your machine).
-To launch Grunt, from your project root :
+You have to have NodeJS and Grunt installed on your machine.
+
+1. Copy / paste the ready to develop skin theme from var/vendor/webcomm/magento-boilerplate/skin/frontend/mytheme to skin/frontend/youtheme
+2. Copy / paste the ready to develop design theme from var/vendor/webcomm/magento-boilerplate/app/design/frontend/boilerplate to app/design/frontend/yourtheme
+3. Log in to the Magento Admin and change the design package from default to yourtheme
+
+You now have a Bootstrap responsive base theme ready to be themed.
+
+But it's not over : Magento Fuse brings tools to help front dev.
+The Grunt config will give you opportunity to modify your Less files from Chrome DevTools and automatically compile and synchronize the browsers (IE, FF, Chrome, Safari) even on your mobile.
+
+The Grunt config use grunt-contrib-watch to watch the changes during your dev, grunt-contrib-less to compile your Less files and create the map file of your CSS for Chrome to display your Less files in Chrome Devtools (amazing) and grunt-browser-sync to synchronize the CSS, JS and HTML on all your browsers (and no only chrome).
+
+To achieve this, just launch Grunt from your project root :
 ```
 sudo grunt
 ```
 
-That's all
+Enjoy ;)
