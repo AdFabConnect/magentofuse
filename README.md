@@ -15,14 +15,14 @@ This project is directly inspired by http://en.wikipedia.org/wiki/AppFuse
 
 Here you have adfab/magento, a Magento CE rocketed with the best modules and extensions ever created by fabulous people
 
-Composer
+##Composer
 - ivanchepurnyi (https://github.com/EcomDev/EcomDev_PHPUnit)
 - bencorlett (https://github.com/webcomm/magento-boilerplate)
 - stof (https://github.com/Incenteev/ParameterHandler)
 - mmenozzi https://github.com/webgriffe/magento-installer)
 - Vinai (https://github.com/magento-hackathon/magento-composer-installer)
 
-Grunt
+##Grunt
 - shama (https://github.com/gruntjs/grunt-contrib-watch)
 - tkellen (https://github.com/gruntjs/grunt-contrib-less)
 - hughsk (https://github.com/hughsk/kss-node)
