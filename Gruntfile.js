@@ -17,6 +17,43 @@ module.exports = function(grunt) {
                 }
             }
         },
+        styleguide: {
+            options: {
+                template: {
+                    src: 'var/styleguide/kss',
+                    include: ['skin/frontend/adfab/default/css/style.css']
+                },
+                framework: {
+                    name: 'kss'
+                }
+            },
+
+            dev: {
+                options: {
+                    // task options 
+                },
+                files: {
+                    'styleguide': 'skin/frontend/adfab/default/less/style.less'
+                }
+            }
+        },
+        browser_sync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                           'skin/frontend/adfab/default/css/style.css',
+                           'app/design/frontend/adfab/default/template/**/*.phtml',
+                           'styleguide/*.html',
+                          ]
+                },
+                options: {
+                    watchTask: true,
+                    proxy: {
+                        host: "magento.local",
+                    }
+                }
+            }
+        },
         watch: {
             all: {
                 files: [
@@ -25,10 +62,15 @@ module.exports = function(grunt) {
                         'vendor/webcomm/magento-boilerplate/skin/frontend/boilerplate/default/less/**/*.less',
                         'vendor/webcomm/magento-boilerplate/skin/frontend/boilerplate/default/components/bootstrap/less/**/*.less'
                         ],
-                tasks: ['less'],
+                tasks: ['less', 'styleguide'],
             }
         }
     });
 
-    grunt.registerTask('default', ['less', 'watch']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-styleguide');
+    grunt.loadNpmTasks('grunt-browser-sync');
+    
+    grunt.registerTask('default', ['browser_sync', 'watch']);
 };
