@@ -13,7 +13,11 @@ This project is directly inspired by http://en.wikipedia.org/wiki/AppFuse
 - I wanted Magento to be fast and easy to skin
 - I wanted Magento to be fast and easy to embed new features
 
-Here you have adfab/magento, a Magento CE rocketed with the best modules and extensions ever created by fabulous people
+Here you have adfab/magento, a Magento CE rocketed with the best modules and extensions ever created by fabulous people.
+
+This project aims to ease your life as a Magento dev :
+- With Magento Fuse, you install a CE version of Magento in 1 line. The installation includes the database creation and sample upload (if you want).
+
 
 ##Composer
 - ivanchepurnyi (https://github.com/EcomDev/EcomDev_PHPUnit)
