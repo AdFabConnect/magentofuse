@@ -33,11 +33,15 @@ Much much more to come !
 
 
 #Usage
-
-$ composer create-project adfab/magento new-project 1.8.1.0-dev
+```
+composer create-project adfab/magento new-project 1.8.1.0-dev
+```
 To know which versions of Magento are available check available branches.
 
-If you want to launch specific Magento install : composer run-script post-install-cmd
+If you want to launch specific Magento install : 
+```
+composer run-script post-install-cmd
+```
 Many thanks to https://github.com/webgriffe/magento !
 
 Once the projet is installed you'll be able to dev the frontend directly from Chrome DevTools while keeping updated ALL browsers (incuding mobiles)
@@ -45,6 +49,8 @@ connected to your magento website.
 
 (You have to have NodeJS and Grunt installed on your machine).
 To launch Grunt, from your project root :
-$ sudo grunt
+```
+sudo grunt
+```
 
 That's all
