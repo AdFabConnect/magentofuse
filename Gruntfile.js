@@ -54,6 +54,17 @@ module.exports = function(grunt) {
                 }
             }
         },
+        photobox: {
+            task : {
+              options: {
+                  indexPath      : 'cssunit/',
+                  highlightColor : '#0000ff',
+                  template       : 'canvas',
+                  screenSizes : [ '600', '1000', '1200' ],
+                  urls        : [ 'http://magento.local', 'http://magento.local/apparel.html' ]
+              }
+            }
+        },
         watch: {
             all: {
                 files: [
@@ -71,6 +82,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-styleguide');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-photobox');
     
     grunt.registerTask('default', ['browser_sync', 'watch']);
 };
