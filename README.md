@@ -97,7 +97,7 @@ sudo grunt
 # HOW-TO DEVELOP A NEW MODULE
 ## Introduction
 
-With Magento, a module is spli into many directories making its development and maintenance difficult.
+With Magento, a module is split into many directories making its development and maintenance difficult.
 
 Thanks to Magento Fuse, we'll fix this and simplify the development of a module : You'll only version your module stuff. Nothing more !
 
@@ -120,7 +120,7 @@ A new tool fully inspired by Mtool from Daniel Kocherga (https://github.com/dank
 ## Dev process
 
 ### Create the module skeleton
-Add a composer.json to define the project as a Magentomodule ("type" : "magento-module") + describe the installation mapping :
+Add a composer.json to define the project as a Magento module ("type" : "magento-module") + describe the installation mapping :
 
 ```
 
@@ -172,7 +172,7 @@ Once done, declare the SVN or Git repository in the Fuse composer.json (foolowin
 "repositories": [
     {
         "type": "vcs",
-        "url": "http://94.23.211.86/svnprojects/LABS/MAGENTO/AVATAR"
+        "url": "http://myrepository.com/svn/MAGENTO/AVATAR"
     }
 ],
 ```
