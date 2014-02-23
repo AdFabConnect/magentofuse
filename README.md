@@ -94,5 +94,97 @@ To benefit from this feature, just launch grunt :
 sudo grunt
 ```
 
+# HOW-TO DEVELOP A NEW MODULE
+## Introduction
+
+With Magento, a module is spli into many directories making its development and maintenance difficult.
+
+Thanks to Magento Fuse, we'll fix this and simplify the development of a module : You'll only version your module stuff. Nothing more !
+
+## The skeleton
+
+A new tool fully inspired by Mtool from Daniel Kocherga (https://github.com/dankocherga/MTool) will be added to Magento Fuse soon. In the meantime, organize your module skeleton this way :
+
+```
+/app/etc/modules/Adfab_Monmodule.xml
+/app/code/community/Adfab/Monmodule/*
+/app/design/frontend/base/default/layout/adfab/monmodule/*
+/app/design/frontend/base/default/template/adfab/monmodule/*
+/skin/frontend/base/default/css/adfab/monmodule/*
+/skin/frontend/base/default/js/adfab/monmodule/*
+/skin/frontend/base/default/images/adfab/monmodule/*
+/js/adfab/monmodule/*
+/lib/adfab/monmodule/*
+```
+
+## Dev process
+
+### Create the module skeleton
+Add a composer.json to define the project as a Magentomodule ("type" : "magento-module") + describe the installation mapping :
+
+```
+
+{
+    "name": "adfab/avatar",
+    "description": "Social commerce is on its way",
+    "version": "1.0.0",
+    "type": "magento-module",
+    "keywords": [
+        "magento", "avatar", "social commerce", "adfab"
+    ],
+    "homepage": "http://www.adfab.fr",
+    "license":"OSL-3.0",
+    "authors": [
+        {
+            "name": "Grégory Besson",
+            "email": "gregory.besson@adfab.fr",
+            "homepage": "http://www.adfab.fr"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "@stable"
+    },
+    "extra": {
+        "map": [
+            ["app/etc/modules/Adfab_Avatar.xml", "app/etc/modules/Adfab_Avatar.xml"],
+            ["app/code/community/Adfab/Avatar/", "app/code/community/Adfab/Avatar/"],
+            ["app/design/frontend/base/default/layout/adfab/avatar/layout.xml", "app/design/frontend/base/default/layout/adfab/avatar/layout.xml"],
+            ["app/locale/en_US/Adfab_Avatar.csv", "app/locale/en_US/Adfab_Avatar.csv"],
+            ["app/locale/fr_FR/Adfab_Avatar.csv", "app/locale/fr_FR/Adfab_Avatar.csv"],
+            ["skin/frontend/base/default/css/adfab/avatar/", "skin/frontend/base/default/css/adfab/avatar/"],
+            ["skin/frontend/base/default/images/adfab/avatar/", "skin/frontend/base/default/images/adfab/avatar/"],
+            ["skin/frontend/base/default/js/adfab/", "skin/frontend/base/default/js/adfab/"]
+        ]
+    }
+}
+```
+
+### Version this module 
+Use Git or SVN as you wish
+
+### Install a Magento version with Magento Fuse
+Once done, declare the SVN or Git repository in the Fuse composer.json (foolowing example for SVN) :
+
+```
+"require": {
+    "adfab/avatar": "dev-trunk"
+},
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "http://94.23.211.86/svnprojects/LABS/MAGENTO/AVATAR"
+    }
+],
+```
+
+Launch ``` composer update ``` (your module will be installed in your vendor directory)
+
+### Add this module directory in your IDE
+
+Add the module directory as a project in your IDE (For Eclipse : New->PHP Project from existing directory).
+
+That's it, You can now develop your Magento module with no adherence with the Magento core files :)
+
+Each modification is directly testabe on your Fuse environment. And the versioning will only contain the files from your module.
 
 Enjoy ;)
