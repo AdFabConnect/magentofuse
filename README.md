@@ -163,7 +163,7 @@ Add a composer.json to define the project as a Magento module ("type" : "magento
 Use Git or SVN as you wish
 
 ### Install a Magento version with Magento Fuse
-Once done, declare the SVN or Git repository in the Fuse composer.json (foolowing example for SVN) :
+Once done, declare the SVN or Git repository in the Fuse composer.json (following example for SVN) :
 
 ```
 "require": {
