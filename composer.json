@@ -27,6 +27,10 @@
         },
         {
            "type": "vcs",
+           "url": "https://github.com/gregorybesson/magento-installer"
+        },
+        {
+           "type": "vcs",
            "url": "https://github.com/AdFabConnect/magento-boilerplate"
         },
         {
@@ -60,7 +64,8 @@
             "file": "var/install.yml"
         },
         "install": "var/install.yml",
-        "magento-root-dir": "./"
+        "magento-root-dir": "./",
+        "magento-sample-dir": "./var/magento-sample-data"
     },
     "autoload": {
         "psr-0": {
