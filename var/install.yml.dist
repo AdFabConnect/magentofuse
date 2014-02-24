@@ -12,3 +12,4 @@ parameters:
     admin_email: admin@test.com
     admin_username: admin
     admin_password: password
+    install_sample: false
