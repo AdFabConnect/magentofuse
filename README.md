@@ -39,7 +39,7 @@ Much much more to come !
 #Usage
 ## Create a new project
 ```
-composer create-project adfab/magento new-project 1.8.1.0-dev
+composer create-project adfab/magentofuse new-project 1.8.1.0-dev
 ```
 (Check available branches to know which versions of Magento are available)
 
