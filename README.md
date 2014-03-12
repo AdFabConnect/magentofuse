@@ -181,10 +181,13 @@ Once done, declare the SVN or Git repository in the Fuse composer.json (followin
 
 Launch ``` composer update ``` (your module will be installed in your vendor directory)
 
--- BE CAREFUL --
+---
+**BE CAREFUL**
 Don't forget to activate the symlinks in System/configuration/Developer/Allow Symlinks
 
+
 If you forget to do that, the render of your templates will fail silently :P
+---
 
 ### Add this module directory in your IDE
 
