@@ -43,6 +43,8 @@ composer create-project adfab/magentofuse new-project 1.8.1.0-dev
 ```
 (Check available branches to know which versions of Magento are available)
 
+**BEWARE : Your Mysql account must have a password**
+
 This command will : 
 - download the Magento version 1.8.1.0
 - Install the PHPUnit module
