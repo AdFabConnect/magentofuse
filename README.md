@@ -19,6 +19,22 @@ This project aims to ease your life as a Magento dev :
 - With Magento Fuse, you install a CE version of Magento in 1 line. The installation includes the database creation and sample upload (if you want).
 
 
+##CORE FIX AND MODIFICATION
+For the version 1.8.1.0, here is what has been modified in the core (yes : core !) of Magento :
+
+Fix of the bug on some architectures : http://stackoverflow.com/questions/16800147/how-to-solve-php-extensions-0-must-be-loaded
+the .htaccess file has been modified so that you can work in dev mode on your local env with this :
+
+```
+############################################
+## Dev Environment if host = *.local or *.dev
+## TODO: ini_set('display_errors', 1);
+## 
+
+    SetEnvIf Host .*\.dev MAGE_IS_DEVELOPER_MODE=1
+    SetEnvIf Host .*\.local MAGE_IS_DEVELOPER_MODE=1
+```
+
 ##Composer
 - ivanchepurnyi (https://github.com/EcomDev/EcomDev_PHPUnit)
 - bencorlett (https://github.com/webcomm/magento-boilerplate)
