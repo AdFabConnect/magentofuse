@@ -22,8 +22,9 @@ This project aims to ease your life as a Magento dev :
 ##CORE FIX AND MODIFICATION
 For the version 1.8.1.0, here is what has been modified in the core (yes : core !) of Magento :
 
-Fix of the bug on some architectures : http://stackoverflow.com/questions/16800147/how-to-solve-php-extensions-0-must-be-loaded
-the .htaccess file has been modified so that you can work in dev mode on your local env with this :
+- Fix of the bug on some architectures : http://stackoverflow.com/questions/16800147/how-to-solve-php-extensions-0-must-be-loaded
+- Fix of the INNODB installation bug : http://stackoverflow.com/questions/15443448/magento-complains-missing-innodb-when-it-is-available
+- the .htaccess file has been modified so that you can work in dev mode on your local env with this :
 
 ```
 ############################################
