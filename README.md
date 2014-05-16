@@ -96,7 +96,7 @@ The Grunt config use grunt-contrib-watch to watch the changes during your dev, g
 
 To achieve this, just launch Grunt from your project root :
 ```
-sudo grunt
+grunt
 ```
 
 ### TDD CSS
@@ -110,7 +110,7 @@ With the dynamic update on save, you then can work directly on html templates of
 
 To benefit from this feature, just launch grunt :
 ```
-sudo grunt
+grunt
 ```
 
 # HOW-TO DEVELOP A NEW MODULE

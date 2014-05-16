@@ -1,0 +1,104 @@
+<?php
+namespace Adfab;
+
+use Composer\Script\Event;
+use Composer\IO\IOInterface;
+
+class MagentoDownloader {
+    
+    public static $regEx = '^1\.\d+\.\d+.*';
+    protected $url = 'http://www.magentocommerce.com/downloads/assets/${VERSION}/magento-${VERSION}.tar.gz';
+    protected $version;
+    protected $filename;
+    protected $rootDir;
+    /**
+     * @var IOInterface
+     */
+    protected $io;
+    
+    public function __construct( $version = null, IOInterface $io = null) {
+        if ( $io ) {
+            $version = $io->askAndValidate('Magento version: ', array($this,'validateVersion'), 3);
+        }
+        self::validateVersion($version);
+        $this->version = $version;
+        $this->rootDir = dirname(dirname(__DIR__));
+        $this->filename = $this->rootDir.'/var/magento.tar.gz';
+        $this->io = $io;
+    }
+    
+    public function progress($resource,$download_size, $downloaded, $upload_size, $uploaded)
+    {
+        if($download_size > 0 && $this->io ) {
+            $this->io->write('Download magento source file: '.round( $downloaded / $download_size  * 100, 2). '%'."\r", false);
+        }
+    }
+    
+    public function download() {
+        $out = fopen($this->filename,'wb');
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_FILE, $out);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_URL, strtr($this->url,array('${VERSION}'=>$this->version)));
+        curl_setopt($ch, CURLOPT_PROGRESSFUNCTION, array($this,'progress'));
+        curl_setopt($ch, CURLOPT_NOPROGRESS, false);
+        curl_exec($ch);
+        curl_close($ch);
+        fclose($out);
+    }
+    
+    public function extract() {
+        if ( is_dir( $this->rootDir.'/app' ) ) {
+            return true;
+        }
+        $varDir = $this->rootDir.'/var';
+        $tarFile = $varDir.'/magento.tar';
+        if ( file_exists($tarFile) ) {
+            unlink($tarFile);
+        }
+        $phar = new \PharData($this->filename);
+        $phar->decompress();
+        $phar = new \PharData($tarFile);
+        $phar->extractTo($varDir,null, true);
+        if ( file_exists($tarFile) ) {
+            unlink($tarFile);
+        }
+        foreach( glob($varDir.'/magento/*') as $dir ) {
+            $baseName = pathinfo($dir,PATHINFO_BASENAME);
+            if (in_array($baseName, array('lib','var') ) ) {
+                foreach( glob($varDir.'/magento/'.$baseName.'/*') as $subdir ) {
+                    rename($subdir, $this->rootDir.'/'.$baseName.'/'.pathinfo($subdir,PATHINFO_BASENAME));
+                }
+                if ( is_file($varDir.'/magento/'.$baseName.'/.htaccess') ) {
+                    rename($varDir.'/magento/'.$baseName.'/.htaccess', $this->rootDir.'/'.$baseName.'/.htaccess');
+                }
+                rmdir($dir);
+            }
+            else {
+                rename($dir, $this->rootDir.'/'.pathinfo($dir,PATHINFO_BASENAME));
+            }
+        }
+        if ( is_file($varDir.'/magento/.htaccess') ) {
+            rename($varDir.'/magento/.htaccess', $this->rootDir.'/.htaccess');
+        }
+        if ( is_file($varDir.'/magento/.htaccess.sample') ) {
+            rename($varDir.'/magento/.htaccess.sample', $this->rootDir.'/.htaccess.sample');
+        }
+        rmdir($varDir.'/magento');
+    }
+    
+    public static function validateVersion($version) {
+        if ( preg_match('/'.self::$regEx.'/ims', $version) ) {
+            return $version;
+        }
+        else {
+            throw new \Exception('Invalid Magento version format (1.x.x...)');
+        }
+    }
+    
+    public static function run(Event $event) {
+        $magentoDownloader = new self(null, $event->getIO());
+        $magentoDownloader->download();
+        $magentoDownloader->extract();
+    }
+}

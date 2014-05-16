@@ -2,14 +2,14 @@ parameters:
     locale: fr_FR
     timezone: Europe/Paris
     default_currency: EUR
-    db_host: localhost
-    db_name: magento
-    db_user: root
-    db_pass: password
-    url: http://magento.local/
+    db_host: DATABASE_HOST
+    db_name: DATABASE_NAME
+    db_user: DATABASE_USER
+    db_pass: DATABASE_PASSWORD
+    url: http://DOMAIN/
     admin_firstname: Admin
     admin_lastname: Admin
-    admin_email: admin@test.com
+    admin_email: admin@DOMAIN
     admin_username: admin
     admin_password: password
     install_sample: false
