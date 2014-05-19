@@ -2,16 +2,21 @@
 	"name" : "adfab/magentofuse",
 	"license" : "OSL",
 	"authors" : [{
-		"name" : "AdFab Connect",
-		"email" : "gregory.besson@adfab.fr"
-	}],
+			"name" : "AdFab Connect",
+			"email" : "gregory.besson@adfab.fr"
+		}
+	],
 	"require" : {
 		"composer/composer" : "dev-master",
 		"incenteev/composer-parameter-handler" : "@stable",
 		"ivanchepurnyi/ecomdev_phpunit" : "dev-dev",
+		"laurent35240/magento-sass" : "dev-master",
+		"leafo/lessphp": "0.4.*@dev",
+		"leafo/scssphp": "dev-master",
 		"magento-hackathon/magento-composer-installer" : "@stable",
 		"magento-hackathon/composer-command-integrator" : "dev-master",
 		"mikey179/vfsStream" : "*",
+		"richthegeek/phpsass" : "dev-master",
 		"webgriffe/magento-installer" : "dev-master"
 	},
 	"require-dev" : {
@@ -21,20 +26,12 @@
 			"type" : "vcs",
 			"url" : "https://github.com/gregorybesson/MTool"
 		}, {
-			"type" : "vcs",
-			"url" : "https://github.com/AdFabConnect/bootstrap-styleguide"
-		}, {
 			"type" : "composer",
 			"url" : "http://packages.firegento.com"
 		}
 	],
 	"scripts" : {
 		"post-install-cmd" : [
-			"Adfab\\MagentoDownloader::run",
-			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-			"Webgriffe\\MagentoInstaller\\ScriptHandler::installMagento"
-		],
-		"post-update-cmd" : [
 			"Adfab\\MagentoDownloader::run",
 			"Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
 			"Webgriffe\\MagentoInstaller\\ScriptHandler::installMagento"

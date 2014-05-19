@@ -1,12 +1,21 @@
 {
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.9",
-    "grunt-contrib-watch": "~0.5.3",
-    "matchdep": "~0.3.0",
-    "grunt-contrib-less": "~0.8.3",
-    "grunt-styleguide": "~0.2.14",
-    "grunt-browser-sync": "~0.5.2",
-    "grunt-photobox": "~0.6.0"
+    "grunt": ">=0.4.5",
+    "glob": ">=3.2.8",
+    "grunt-cli": ">=0.1.9",
+    "grunt-browser-sync": ">=0.5.2",
+    "grunt-contrib-compass": ">=0.7.2",
+    "grunt-contrib-concat": ">=0.3.0",
+    "grunt-contrib-imagemin": ">=0.1.2",
+    "grunt-contrib-jshint": ">=0.10.0",
+    "grunt-contrib-less": ">=0.8.3",
+    "grunt-contrib-uglify": ">=0.4.0",
+    "grunt-contrib-watch": ">=0.5.3",
+    "grunt-photobox": ">=0.6.0",
+    "grunt-styleguide": ">=0.2.14",
+    "matchdep": ">=0.3.0"
+  },
+  "dependencies": {
+    "load-grunt-tasks": ">=0.2.0"
   }
 }

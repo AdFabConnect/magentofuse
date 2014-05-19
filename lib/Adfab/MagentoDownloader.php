@@ -48,9 +48,6 @@ class MagentoDownloader {
     }
     
     public function extract() {
-        if ( is_dir( $this->rootDir.'/app' ) ) {
-            return true;
-        }
         $varDir = $this->rootDir.'/var';
         $tarFile = $varDir.'/magento.tar';
         if ( file_exists($tarFile) ) {
@@ -63,28 +60,21 @@ class MagentoDownloader {
         if ( file_exists($tarFile) ) {
             unlink($tarFile);
         }
-        foreach( glob($varDir.'/magento/*') as $dir ) {
-            $baseName = pathinfo($dir,PATHINFO_BASENAME);
-            if (in_array($baseName, array('lib','var') ) ) {
-                foreach( glob($varDir.'/magento/'.$baseName.'/*') as $subdir ) {
-                    rename($subdir, $this->rootDir.'/'.$baseName.'/'.pathinfo($subdir,PATHINFO_BASENAME));
+    }
+
+    public function sync($dir = '') {
+        foreach( glob($this->rootDir.'/var/magento'.$dir.'/{,.}*', GLOB_BRACE) as $subDir ) {
+            $baseName = pathinfo($subDir,PATHINFO_BASENAME);
+            if ( !in_array( $baseName, array('.','..') ) ) {
+                if ( is_dir($this->rootDir.$dir.'/'.$baseName) ) {
+                    $this->sync($dir.'/'.$baseName);
+                    rmdir($this->rootDir.'/var/magento'.$dir.'/'.$baseName);
                 }
-                if ( is_file($varDir.'/magento/'.$baseName.'/.htaccess') ) {
-                    rename($varDir.'/magento/'.$baseName.'/.htaccess', $this->rootDir.'/'.$baseName.'/.htaccess');
+                else {
+                    rename($subDir, $this->rootDir.$dir.'/'.$baseName);
                 }
-                rmdir($dir);
-            }
-            else {
-                rename($dir, $this->rootDir.'/'.pathinfo($dir,PATHINFO_BASENAME));
             }
         }
-        if ( is_file($varDir.'/magento/.htaccess') ) {
-            rename($varDir.'/magento/.htaccess', $this->rootDir.'/.htaccess');
-        }
-        if ( is_file($varDir.'/magento/.htaccess.sample') ) {
-            rename($varDir.'/magento/.htaccess.sample', $this->rootDir.'/.htaccess.sample');
-        }
-        rmdir($varDir.'/magento');
     }
     
     public static function validateVersion($version) {
@@ -100,5 +90,6 @@ class MagentoDownloader {
         $magentoDownloader = new self(null, $event->getIO());
         $magentoDownloader->download();
         $magentoDownloader->extract();
+        $magentoDownloader->sync();
     }
 }
