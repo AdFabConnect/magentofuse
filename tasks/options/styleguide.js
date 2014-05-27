@@ -1,20 +1,15 @@
 module.exports = {
 	options : {
-		options : {
-			template : {
-				src : 'var/styleguide/kss',
-				include : [ '*/*/css/style.css' ]
-			},
-			framework : {
-				name : 'kss'
-			}
+		template : {
+			src : 'var/styleguide/kss'
 		},
-		dev : {
-			options : {
-			},
-			files : {
-				'styleguide' : 'skin/frontend/'+design+'/less/styles.less'
-			}
+		framework : {
+			name : 'kss'
+		}
+	},
+	dev : {
+		files : {
+			'styleguide' : 'skin/frontend/'+design+'/scss/**.scss'
 		}
 	}
 };

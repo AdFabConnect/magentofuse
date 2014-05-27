@@ -15,7 +15,9 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="../skin/frontend/adfab/default/css/style.css">
+  <link rel="stylesheet" href="../skin/frontend/rwd/themefuse/css/styles.css">
+  <link rel="stylesheet" href="../skin/frontend/rwd/themefuse/css/scaffold-forms.css">
+  <link rel="stylesheet" href="../skin/frontend/rwd/themefuse/css/themefuse.css">
 
 </head>
 <body><div id="kss-wrapper">
@@ -89,25 +91,52 @@
     $(document).ready(function(){
       var sidebarAdjust = function() {
         // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
+        var height = Math.max(jQuery(window).height(), jQuery('#kss-main').height());
 
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
+        if (jQuery(window).width() <= 768) {
+          jQuery('#kss-main, #kss-nav').height('auto');
         } else {
-          $('#kss-main, #kss-nav').height(height);
+          jQuery('#kss-main, #kss-nav').height(height);
         }
       };
 
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
+      jQuery(window).resize(sidebarAdjust);
+      jQuery(window).scroll(sidebarAdjust);
       sidebarAdjust();
 
       // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
+      jQuery('pre>code').addClass('prettyprint');
       prettyPrint();
 
     });
   </script>
+  
+  <!-- MAGENTO SCRIPTS -->
+    <script type="text/javascript" src="../../js/prototype/prototype.js"></script>
+    <script type="text/javascript" src="../../js/lib/ccard.js"></script>
+    <script type="text/javascript" src="../../js/prototype/validation.js"></script>
+    <script type="text/javascript" src="../../js/scriptaculous/builder.js"></script>
+    <script type="text/javascript" src="../../js/scriptaculous/effects.js"></script>
+    <script type="text/javascript" src="../../js/scriptaculous/dragdrop.js"></script>
+    <script type="text/javascript" src="../../js/scriptaculous/controls.js"></script>
+    <script type="text/javascript" src="../../js/scriptaculous/slider.js"></script>
+    <script type="text/javascript" src="../../js/varien/js.js"></script>
+    <script type="text/javascript" src="../../js/varien/form.js"></script>
+    <script type="text/javascript" src="../../js/mage/translate.js"></script>
+    <script type="text/javascript" src="../../js/mage/cookies.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/modernizr.custom.min.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/selectivizr.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/matchMedia.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/matchMedia.addListener.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/enquire.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/app.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/jquery.cycle2.swipe.min.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/slideshow.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/imagesloaded.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/minicart.js"></script>
+    <script type="text/javascript" src="../../skin/frontend/rwd/default/js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js"></script>
 
   {{! This won't be included in the demo page }}
   {{#if argv.xdemo}}

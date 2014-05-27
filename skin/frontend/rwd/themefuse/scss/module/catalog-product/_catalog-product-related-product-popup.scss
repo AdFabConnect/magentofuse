@@ -1,0 +1,122 @@
+/* Magento - Product view related product
+
+Magento Product view related product
+
+<h1>Result</h1>
+
+Markup: <div class="block block-related">
+    <div class="block-title">
+        <h2>Related Products</h2>
+    </div>
+    <div class="block-content">
+        <p class="block-subtitle">
+            Check items to add to the cart or&nbsp;
+            <a href="#" onclick="selectAllRelated(this); return false;">select all</a>
+        </p>
+        <ol class="mini-products-list" id="block-related">
+            <li class="item odd">
+                <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox554" name="related_products[]" value="554" />
+                <div class="product">
+                    <a href="#" title="Swiss Movement Sports Watch" class="product-image">
+                        <img src="http://placehold.it/75x75" width="75" height="75" alt="Swiss Movement Sports Watch">
+                    </a>
+                    <div class="product-details">
+                        <p class="product-name">
+                            <a href="#">Swiss Movement Sports Watch</a>
+                        </p>                  
+                        <div class="price-box">
+                            <span class="regular-price" id="product-price-554-related">
+                                <span class="price">$500.00</span>
+                            </span>
+                        </div>
+                        <a href="#" class="link-wishlist">Add to Wishlist</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item last even">
+                <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox553" name="related_products[]" value="553" />
+                <div class="product">
+                    <a href="#" title="Silver Desert Necklace" class="product-image">
+                        <img src="http://placehold.it/75x75" width="75" height="75" alt="Silver Desert Necklace">
+                    </a>
+                    <div class="product-details">
+                        <p class="product-name">
+                            <a href="#">Silver Desert Necklace</a>
+                        </p>
+                        <div class="price-box map-info">
+                          <a href="#" id="msrp-click-553y0G1zSrCgD7Hw4fZjzo1">Click for price</a>
+                        </div>
+                        <a href="#" class="link-wishlist">Add to Wishlist</a>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+</div>
+
+Styleguide 6.3
+*/
+
+/* -------------------------------------------- *
+ * Related Products
+ */
+
+/* Block: Related */
+
+.block-related {
+
+    li {
+        margin-bottom: $element-spacing;
+    }
+
+    .block-title {
+        border-bottom: none;
+
+        h2 {
+            @include h2();
+            margin-bottom: 0;
+        }
+    }
+
+    .block-subtitle {
+        margin-bottom: $element-spacing;
+    }
+
+    .product {
+        margin-left: 20px;
+        position: relative;
+    }
+    .checkbox {
+        float: left;
+        margin-top: 36px;
+    }
+
+    .product-details {
+        margin-left: 90px;
+    }
+
+    .product-name {
+        margin-bottom: 3px;
+    }
+
+    .product-details .price-box {
+        margin: 2px 0 3px;
+
+        a,
+        p,
+        span {
+            float: left;
+            margin-left: 3px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        &:after {
+            @include clearfix;
+        }
+    }
+    .link-wishlist {
+        display: none;
+    }
+}

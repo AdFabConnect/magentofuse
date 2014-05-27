@@ -1,0 +1,152 @@
+/* Magento - Footer
+
+Magento footer
+
+<h1>Result</h1>
+
+Markup: <div class="footer-container">
+    <div class="footer">
+        <div class="block block-subscribe">
+            <div class="block-title">
+                <strong><span>Newsletter</span></strong>
+            </div>
+            <form action="" method="post" id="newsletter-validate-detail">
+                <div class="block-content">
+                    <div class="form-subscribe-header">
+                        <label for="newsletter">Sign Up for Our Newsletter:</label>
+                    </div>
+                    <div class="input-box">
+                      <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="Sign up for our newsletter" class="input-text required-entry validate-email">
+                    </div>
+                    <div class="actions">
+                        <button type="submit" title="Subscribe" class="button"><span><span>Subscribe</span></span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="links">
+            <div class="block-title">
+                <strong><span>Company</span></strong>
+            </div>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <address class="copyright">Copyright</address>
+    </div>
+</div>
+
+Styleguide 3
+*/
+
+/* -------------------------------------------- *
+ * Footer
+ */
+
+.footer,
+.footer button {
+    font-family: $f-stack-special;
+}
+
+.footer {
+    clear: both;
+    width: 100%;
+    border-top: 1px solid $c-module-border;
+    padding-top: $trim;
+
+    @include bp(max-width, $bp-xsmall) {
+        padding-top: $trim-small;
+    }
+
+    // ---------------------------------------------
+
+    .bugs,
+    address {
+        clear: both;
+    }
+
+    .bugs {
+        display: none;
+    }
+
+    .form-language,
+    .currency-switcher,
+    .store-switcher {
+        clear: both;
+        margin-bottom: $gap;
+    }
+
+    .form-language,
+    .currency-switcher {
+        display: none;
+    }
+
+    address {
+        border-top: 1px solid $c-module-border;
+        text-align: center;
+        width: 100%;
+        font-size: $f-size-xxs;
+        margin-top: $trim;
+        padding: $trim 0;
+    }
+
+    @include bp(max-width, $bp-xlarge) {
+        $links-trim: percentage(30px / 960px);
+        $links-width: (100 - ($links-trim * 3)) / 4;
+
+        .links {
+            width: $links-width;
+            padding-right: 0;
+            margin-right: $links-trim;
+        }
+
+        .links:nth-child(4) {
+            margin-right: 0;
+        }
+
+        .block-subscribe {
+            clear: both;
+            float: none;
+            margin: 0 auto $trim auto;
+        }
+    }
+
+    @include bp(max-width, $bp-medium) {
+        .form-language,
+        .currency-switcher {
+            display: block;
+        }
+    }
+
+    @include bp(max-width, $bp-small) {
+        $links-trim: percentage(15px / 480px);
+        $links-width: (100 - $links-trim) / 2;
+
+        .links {
+            width: $links-width;
+            margin-right: 0;
+        }
+
+        .links:nth-child(odd) {
+            margin-right: $links-trim;
+            clear: both;
+        }
+
+        .block-subscribe {
+            clear: both;
+            float: left;
+            width: 100%;
+        }
+    }
+}
+
+/* -------------------------------------------- *
+ * Footer imports
+ */
+
+@import "footer/footer-subscribe";
+@import "footer/footer-social";
+@import "footer/footer-blocks";

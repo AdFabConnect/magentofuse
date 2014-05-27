@@ -1,0 +1,143 @@
+/* Magento - Header search
+
+Magento header search
+
+<h1>Result</h1>
+
+Markup: <!-- adding a div in relative for the exemple -->
+<div style="position:relative;height:200px;">
+    <div class="skip-links">
+        <a href="#header-search" class="skip-link skip-search">
+            <span class="icon"></span>
+            <span class="label">Search</span>
+        </a>
+    </div>
+    <div id="header-search" class="skip-content">
+        <!-- SEARCH -->
+        <form id="search_mini_form" action="" method="get">
+            <div class="input-box">
+                <label for="search">Search:</label>
+                <input id="search" type="search" name="q" value="" class="input-text required-entry" maxlength="128" placeholder="Search entire store here..." autocomplete="off">
+                <button type="submit" title="Search" class="button search-button"><span><span>Search</span></span></button>
+            </div>
+            <div id="search_autocomplete" class="search-autocomplete">
+                <ul>
+                    <li style="display:none" class=""></li>
+                    <li title="tori" class="even first selected">
+                        <span class="amount">1</span>tori
+                    </li>
+                    <li title="Tori Tank" class="odd last">
+                        <span class="amount">1</span>Tori Tank</li>
+                    </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+Styleguide 4.3
+*/
+
+/* ============================================ *
+ * Search - Skip Link
+ * ============================================ */
+
+.skip-search {
+
+    &:not(.skip-active):hover {
+        .icon {
+            background-position: -50+4px (-150px + ($toolbar-icon-padding-offset/2));
+        }
+    }
+
+    .icon {
+        @extend .icon-sprite;
+        background-position: 0+4px (-150px + ($toolbar-icon-padding-offset/2));
+    }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-medium + 1) {
+
+    .skip-search {
+        display: none;
+    }
+
+}
+
+/* ============================================ *
+ * Search - Skip Content
+ * ============================================ */
+
+#header-search {
+    padding: 20px;
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-medium + 1) {
+
+    #header-search {
+        display: block; // Force visibility
+        position: absolute;
+        top: 55px;
+        right: 0;
+        width: 25%;
+        height: 50px;
+        padding: 0;
+    }
+
+}
+
+/* ============================================ *
+ * Search Input
+ * ============================================ */
+
+#search_mini_form .input-box {
+    position: relative;
+    padding-top: 0;
+}
+
+#search_mini_form label {
+    display: none;
+}
+
+#search {
+    width: 100%;
+    height: 40px;
+    padding-right: 40px;
+    font-family: $f-stack-special;
+}
+
+#search_mini_form .search-button {
+    @include image-replacement;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: none;
+}
+
+#search_mini_form .search-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    @extend .icon-sprite;
+    background-position: 0+4px (-150px + ($toolbar-icon-padding-offset/2));
+}
+
+#search_mini_form .search-button:hover:before {
+    opacity: 0.8;
+}
+
+#search_mini_form .search-button:active:before {
+    margin-top: -15px + 2px;
+    margin-left: -15px + 2px;
+}

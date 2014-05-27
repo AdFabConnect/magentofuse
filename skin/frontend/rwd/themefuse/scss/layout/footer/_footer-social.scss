@@ -1,0 +1,60 @@
+/* Magento - Footer social
+
+Magento footer social
+
+<h1>Result</h1>
+
+Markup: <div class="footer-container">
+    <div class="footer">
+        <div class="links social-media">
+            <div class="block-title">
+              <strong><span>Connect With Us</span></strong>
+            </div>
+            <ul>
+                <li><a href="#"><em class="facebook"></em>Facebook</a></li>
+                <li><a href="#"><em class="twitter"></em>Twitter</a></li>
+                <li><a href="#"><em class="youtube"></em>YouTube</a></li>
+                <li><a href="#"><em class="pinterest"></em>Pinterest</a></li>
+                <li class="last"><a href="#"><em class="rss"></em>RSS</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+Styleguide 3.3
+*/
+
+.footer{
+  .links.social-media em {
+      background-image: url(../images/social_icons.png);
+      background-repeat: no-repeat;
+      width: 13px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 7px;
+  }
+
+  @include if-min-resolution(2) {
+      .links.social-media em {
+          background-image: url(../images/social_icons@2x.png);
+          background-size: 50px 125px;
+      }
+  }
+
+  @mixin footer-social-icon($class, $y, $height: 13) {
+      .links.social-media em.#{$class} {
+          background-position: 0 -#{$y}px;
+          height: #{$height}px;
+      }
+
+      .links.social-media a:hover em.#{$class} {
+          background-position: -25px -#{$y}px;
+      }
+  }
+
+  @include footer-social-icon(facebook, 0);
+  @include footer-social-icon(twitter, 24);
+  @include footer-social-icon(youtube, 49);
+  @include footer-social-icon(pinterest, 74, 15);
+  @include footer-social-icon(rss, 99);
+}

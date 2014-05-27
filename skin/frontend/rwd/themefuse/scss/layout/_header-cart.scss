@@ -1,0 +1,302 @@
+/* Magento - Header cart
+
+Magento header cart (click on it)
+
+<h1>Result</h1>
+
+Markup: <!-- adding a div in relative for the exemple -->
+<div style="position:relative;height:200px;">
+  <div class="header-minicart">
+        <a href="#header-cart" class="skip-link skip-cart no-count">
+           <span class="icon"></span>
+            <span class="label">Cart</span>
+            <span class="count">0</span>
+        </a>
+        <div id="header-cart" class="block block-cart skip-content">
+            <!-- adding display block to show message -->
+            <div id="minicart-error-message" class="minicart-message" style="display:block;">Error message</div>
+            <!-- adding display block to show message -->
+            <div id="minicart-success-message" class="minicart-message" style="display:block;">Success message</div>
+            <div class="minicart-wrapper">
+               <p class="block-subtitle">
+                   Recently added item(s)
+                   <a class="close skip-link-close" href="#" title="Close">×</a>
+               </p>
+               <p class="empty">You have no items in your shopping cart.</p>
+               <div>
+                    <ul id="cart-sidebar" class="mini-products-list">
+                      <li class="item last odd">
+                        <a href="#" title="Chelsea Tee" class="product-image">
+                          <img src="http://placehold.it/50x50" width="50" height="50" alt="Chelsea Tee">
+                        </a>
+                        <div class="product-details">
+                          <p class="product-name">
+                            <a href="#">Chelsea Tee</a>
+                          </p>
+                          <table class="info-wrapper">
+                            <tbody>
+                              <tr>
+                                <th>Price</th>
+                                <td>
+                                  <span class="price">$75.00</span>
+                                </td>
+                              </tr>
+                              <tr class="qty-wrapper">
+                                <th>Qty</th>
+                                <td>
+                                  <input id="qinput-4746" data-link="#" data-item-id="#" class="qty cart-item-quantity" name="" value="1">
+                                  <button id="qbutton-4746" data-item-id="4746" disabled="disabled" data-update="" class="button quantity-button">ok</button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <a href="#" title="Edit item" class="btn-edit">Edit item</a>
+                          |
+                          <a href="#" title="Remove This Item" data-confirm="Are you sure you would like to remove this item from the shopping cart?" class="remove">Remove Item</a>
+                          <div class="truncated">
+                            <div class="truncated_full_value">
+                              <dl class="item-options">
+                                <dt>Color</dt>
+                                <dd>Black</dd>
+                                <dt>Size</dt>
+                                <dd>S</dd>
+                              </dl>
+                            </div>
+                            <a href="#" onclick="return false;" class="details">Details</a>
+                          </div>
+                        </div>
+                      </li>
+                        </ul>
+                  </div>
+                  <script type="text/javascript">
+                    window.onload = function() {
+                      $j('document').ready(function() {
+                          var minicartOptions  = {
+                              formKey: ""
+                          }
+                          var Mini = new Minicart(minicartOptions);
+                          Mini.init();
+                      });
+                    };
+                  </script>
+                  <div id="minicart-widgets"></div>
+                  <div class="block-content">
+                    <p class="subtotal">
+                      <span class="label">Cart Subtotal:</span> <span class="price">$75.00</span>
+                    </p>
+                  </div>
+                  <div class="minicart-actions">
+                    <a class="cart-link" href="#">View Shopping Cart</a>
+                    <ul class="checkout-types minicart">
+                      <li>
+                        <a title="Checkout" class="button checkout-button" href="#">Checkout</a>
+                      </li>
+                    </ul>
+                  </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.2
+*/
+
+/* ============================================ *
+ * Header - Cart
+ * ============================================ */
+
+/* -------------------------------------------- *
+ * Skip Link - Cart
+ */
+
+.skip-cart {
+    &:not(.skip-active):hover {
+        .icon {
+            background-position: -50px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
+        }
+    }
+
+    .icon {
+        @extend .icon-sprite;
+        background-position: -0px (-100px + ($toolbar-icon-padding-offset/2) + 1px);
+    }
+}
+
+// ---------------------------------------------
+
+@include bp(min-width, $bp-medium + 1) {
+
+    .skip-cart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .skip-cart:hover {
+    }
+
+    #header-cart.skip-active {
+        @include menu;
+        display: block;
+        position: absolute;
+        z-index: 200;
+        top: 40px;
+        right: 0;
+        width: 320px;
+        background: white;
+    }
+
+}
+
+/* -------------------------------------------- *
+ * Skip Cart Notifier
+ */
+
+.skip-cart .count {
+    @include border-radius(12px);
+    display: inline-block;
+    top: -6px;
+    position: relative;
+    z-index: 5;
+    width: 22px;
+    height: 22px;
+    background: rgba($c-action, 0.9);
+    color: #FFFFFF;
+    font-size: $f-size-xxs;
+    line-height: 22px;
+    text-align: center;
+    font-family: $f-stack-sans;
+}
+.skip-link.skip-active .count {
+    color: white;
+}
+
+// Using extra .skip-link selector to increase specificity
+.skip-link.skip-cart .count {
+}
+
+.skip-cart.no-count .count {
+    display: none;
+}
+
+@include bp(max-width, 499px) {
+    .skip-cart .count {
+        margin-left: -12px;
+    }
+}
+
+@include bp(min-width, $bp-medium + 1) {
+    .skip-cart {
+        color: $c-action;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        .count {
+            @include border-radius(0px);
+            color: $c-action;
+            position: static;
+            background: none;
+            margin-left: 0px;
+            font-size: $f-size;
+
+            &:before {
+                content: '(';
+            }
+            &:after {
+                content: ')';
+            }
+        }
+    }
+}
+
+.skip-cart .count.empty {
+    display: none;
+}
+
+/* -------------------------------------------- *
+ * Mini Cart - Empty
+ */
+
+.cart-menu .empty {
+    padding: 20px;
+    text-align: center;
+}
+
+/* -------------------------------------------- *
+ * Mini Cart - Full
+ */
+
+/* Actions */
+
+.cart-menu .actions {
+    overflow: hidden;
+    padding: 15px;
+}
+
+.cart-menu .actions .button {
+    float: left;
+    width: 48%;
+}
+
+.cart-menu .actions .button + .button {
+    margin-left: 4%;
+}
+
+/* Subtotal */
+
+.cart-menu .subtotal {
+    padding: 0 15px 15px;
+    font-family: $f-stack-special;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+/* List */
+
+.mini-cart-list {
+    margin-bottom: 5px;
+}
+
+.mini-cart-list li {
+    position: relative;
+    min-height: (15px + 60px + 15px);
+    padding: 15px 15px 15px (15px + 60px + 15px);
+    border-top: 1px solid $c-module-border;
+    font-size: $f-size-s;
+    line-height: 1.35;
+}
+
+.mini-cart-list .product-name {
+    display: inline-block;
+}
+
+.mini-cart-list .product-image {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+.mini-cart-list .product-image img {
+    width: 60px;
+    height: 60px;
+}
+
+//.mini-cart-list .details { }
+
+.mini-cart-list .has-options {
+    margin-bottom: 0;
+    color: $c-text-gray;
+    font-size: $f-size-xs;
+}
+
+/* Too full - additional items will be shown in cart */
+.cart-menu .last-added {
+    padding: 10px 15px 15px;
+    border-top: 1px solid $c-module-border;
+    font-size: $f-size-s;
+}

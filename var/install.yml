@@ -1,0 +1,16 @@
+# This file is auto-generated during the composer install
+parameters:
+    locale: fr_FR
+    timezone: Europe/Paris
+    default_currency: EUR
+    db_host: localhost
+    db_name: magentofuse
+    db_user: magentofuse
+    db_pass: HVfUtV6NNJQ72pn2
+    url: 'http://magentofuse.alexandre.orleans.adfab.fr/'
+    admin_firstname: Adfab
+    admin_lastname: 'development team'
+    admin_email: alexandre.beaurain@adfab.fr
+    admin_username: adfab
+    admin_password: Lveen2013
+    install_sample: false

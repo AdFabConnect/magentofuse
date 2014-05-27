@@ -1,4 +1,4 @@
-design = 'rwd/default';
+design = 'rwd/themefuse';
 domain = 'magento.local';
 
 module.exports = function(grunt) {
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	// Default Task is basically a rebuild
-	grunt.registerTask('default', [ 'compass', 'less', 'imagemin', 'photobox', 'browser-sync' ]);
+	grunt.registerTask('default', [ 'compass', 'less', 'imagemin', 'styleguide']);
 	grunt.registerTask('dev', [ 'watch' ]);
 
 };
