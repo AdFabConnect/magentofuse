@@ -1,0 +1,194 @@
+/* Magento - Product view
+
+Magento Product view
+
+Styleguide 6
+*/
+
+/* ============================================ *
+ * Catalog - Product
+ * ============================================ */
+
+.product-view {
+    .product-essential {
+
+        .extra-info {
+            .ratings {
+                .rating-box,
+                .amount {
+                    float: left;
+                }
+
+                .rating-box {
+                    margin-top: 8px;
+                    margin-right: $gap;
+                }
+
+                &:after {
+                    @include clearfix;
+                }
+            }
+        }
+
+        &:after {
+            @include clearfix;
+        }
+    }
+
+    .product-shop .product-name .h1,
+    .product-img-box .product-name h1 {
+        color: $c-action;
+        margin-bottom: 10px;
+        border: 0;
+    }
+
+}
+
+.product-view .product-shop,
+.product-img-box,
+.product-collateral,
+.product-view .block-related,
+.box-collateral {
+    margin-bottom: $box-spacing;
+}
+
+
+.product-collateral {
+    clear: both;
+}
+
+.collateral-tabs {
+    dd {
+        h2 {
+            display: none;
+        }
+    }
+}
+
+.box-collateral {
+    clear: both;
+}
+
+@include bp(min-width, $bp-medium + 1) {
+
+    .product-collateral {
+        @include tabs;
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+
+    .product-collateral {
+        @include accordion;
+        @include accordionCollapse;
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+
+    .product-view .product-shop,
+    .product-view .add-to-cart-wrapper,
+    .product-view .block-related,
+    .product-img-box,
+    .product-collateral {
+        width: 100%;
+        float: none;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@include bp(min-width, $bp-medium + 1) {
+
+    .product-view .product-shop .product-name {
+        display: block;
+    }
+    .product-img-box .product-name {
+        display: none;
+    }
+}
+
+@include bp(max-width, $bp-xsmall) {
+
+    .product-view .product-shop,
+    .product-img-box,
+    .product-collateral,
+    .product-view .block-related,
+    .box-collateral {
+        margin-bottom: $trim-small;
+    }
+}
+
+.product-view .ratings {
+    .rating-links {
+        clear: left;
+        float: left;
+        margin-top: 0;
+    }
+}
+
+#product-attribute-specs-table {
+    max-width: $max-std-formatted-width;
+    border: 1px solid $c-table-border;
+
+    th {
+        border-right: 1px solid $c-table-border;
+        border-bottom: 1px solid $c-table-border;
+    }
+}
+
+/* -------------------------------------------- *
+ * Catalog - Grouped Product List
+ */
+
+.grouped-items-table-wrapper {
+    border: solid 1px $c-table-border;
+    width: 100%;
+    padding: $box-spacing;
+    margin-bottom: 15px;
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+    @include bp(max-width, $bp-xsmall) {
+        margin-bottom: $trim-small;
+    }
+}
+
+.grouped-items-table {
+    .name-wrapper {
+        color: $c-text-primary;
+        font-family: $f-stack-special;
+    }
+
+    .qty-wrapper {
+        padding-top: $element-spacing;
+    }
+
+    .qty-label {
+        margin-left: $element-spacing;
+    }
+
+    td {
+        padding: 4px;
+    }
+}
+
+/* -------------------------------------------- *
+ * Upsell Products
+ */
+
+.box-up-sell {
+    margin-top: $box-spacing-large;
+
+    .ratings {
+        display: none;
+    }
+}
+/* -------------------------------------------- *
+ * Product view imports
+ */
+
+@import "catalog-product/catalog-product-shop";
+@import "catalog-product/catalog-product-img-box";
+@import "catalog-product/catalog-product-related-product";

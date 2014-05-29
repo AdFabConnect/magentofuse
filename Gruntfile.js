@@ -1,88 +1,40 @@
+design = 'rwd/themefuse';
+domain = 'magento.local';
+
 module.exports = function(grunt) {
-    'use strict';
 
-    require('matchdep').filterDev('grunt-!(cli)').forEach(grunt.loadNpmTasks);
+	var loadConfig = function(path) {
+		var glob = require('glob');
+		var object = {};
+		var key;
 
-    grunt.initConfig({
-        less: {
-            dev: {
-                options: {
-                    sourceMap: true,
-                    sourceMapFilename: 'skin/frontend/adfab/default/css/style.css.map',
-                    // This is mandatory for Chrome to parse the less files
-                    sourceMapRootpath: 'http://magento.local' 
-                },
-                files: {
-                    'skin/frontend/adfab/default/css/style.css': 'skin/frontend/adfab/default/less/style.less'
-                }
-            }
-        },
-        styleguide: {
-            options: {
-                template: {
-                    src: 'var/styleguide/kss',
-                    include: ['skin/frontend/adfab/default/css/style.css']
-                },
-                framework: {
-                    name: 'kss'
-                }
-            },
+		glob.sync('*', {
+			cwd : path
+		}).forEach(function(option) {
+			key = option.replace(/\.js$/, '');
+			object[key] = require(path + option);
+		});
+		return object;
+	};
 
-            dev: {
-                options: {
-                    // task options 
-                },
-                files: {
-                    'styleguide': 'skin/frontend/adfab/default/less/style.less'
-                }
-            }
-        },
-        browser_sync: {
-            dev: {
-                bsFiles: {
-                    src : [
-                           'skin/frontend/adfab/default/css/style.css',
-                           'app/design/frontend/adfab/default/template/**/*.phtml',
-                           'styleguide/*.html',
-                          ]
-                },
-                options: {
-                    watchTask: true,
-                    proxy: {
-                        host: "magento.local",
-                    }
-                }
-            }
-        },
-        photobox: {
-            task : {
-              options: {
-                  indexPath      : 'cssunit/',
-                  highlightColor : '#0000ff',
-                  template       : 'canvas',
-                  screenSizes : [ '600', '1000', '1200' ],
-                  urls        : [ 'http://magento.local', 'http://magento.local/apparel.html' ]
-              }
-            }
-        },
-        watch: {
-            all: {
-                files: [
-                        'skin/frontend/adfab/default/less/**/*.less',
-                        // Remember to put the REAL path of the directories. Not the virtual links
-                        'vendor/webcomm/magento-boilerplate/skin/frontend/boilerplate/default/less/**/*.less',
-                        'vendor/webcomm/magento-boilerplate/skin/frontend/boilerplate/default/components/bootstrap/less/**/*.less'
-                        ],
-                tasks: ['less', 'styleguide'],
-            }
-        }
-    });
+	// Initial config
+	var config = {
+		pkg : grunt.file.readJSON('package.json')
+	};
 
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-styleguide');
-    grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-photobox');
-    
-    grunt.registerTask('default', ['browser_sync', 'watch']);
+	// Load tasks from the tasks folder
+	grunt.loadTasks('tasks');
+
+	// Load all the tasks options in tasks/options base on the name:
+	// watch.js => watch{}
+	grunt.util._.extend(config, loadConfig('./tasks/options/'));
+
+	grunt.initConfig(config);
+
+	require('load-grunt-tasks')(grunt);
+
+	// Default Task is basically a rebuild
+	grunt.registerTask('default', [ 'compass', 'less', 'imagemin', 'styleguide']);
+	grunt.registerTask('dev', [ 'watch' ]);
+
 };

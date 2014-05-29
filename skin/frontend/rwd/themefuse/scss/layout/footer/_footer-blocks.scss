@@ -1,0 +1,60 @@
+/* Magento - Footer blocks
+
+Magento footer blocks
+
+<h1>Result</h1>
+
+Markup: <div class="footer-container">
+    <div class="footer">
+       <div class="links">
+            <div class="block-title">
+                <strong><span>Company</span></strong>
+            </div>
+            <ul>
+                <li><a href="http://demo.magentocommerce.com/about-magento-demo-store/">About Us</a></li>
+                <li><a href="http://demo.magentocommerce.com/contacts/">Contact Us</a></li>
+                <li><a href="http://demo.magentocommerce.com/customer-service/">Customer Service</a></li>
+                <li><a href="http://demo.magentocommerce.com/privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+Styleguide 3.2
+*/
+
+.footer{
+ .block-title {
+      border-bottom: 0;
+      padding: 3px 0;
+  }
+
+  .block-title strong {
+      font-weight: normal;
+  }
+
+  .block-title,
+  address {
+      color: $c-text-primary;
+  }
+
+  .links {
+      float: left;
+      width: 17%;
+      padding: 0 $trim 0 0;
+      margin-bottom: $trim;
+
+      li {
+          word-break: break-all;
+          line-height: 1.4;
+          padding: 4px 0;
+      }
+
+      a {
+          color: $c-text;
+          &:hover {
+              color: $c-action;
+          }
+      }
+  }
+}

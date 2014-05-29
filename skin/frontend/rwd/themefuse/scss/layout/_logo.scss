@@ -1,0 +1,37 @@
+/* Magento - Header Logo
+
+Magento header Logo
+
+<h1>Result</h1>
+
+Markup: <a class="logo" href="#">
+    <img src="http://placehold.it/272x90" alt="" class="large">
+    <img src="http://placehold.it/453x44" alt="" class="small">
+</a>
+
+Styleguide 4.5
+*/
+.logo {
+    display: block;
+    float: left;
+    width: 65%;
+    min-width: 100px;
+    min-height: 44px;
+    text-align: center;
+    padding: $gap;
+
+    img {
+        max-width: 100%;
+    }
+
+    .small {
+        display: block;
+    }
+    .large {
+        display: none;
+    }
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
