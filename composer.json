@@ -28,7 +28,13 @@
 		}, {
 			"type" : "composer",
 			"url" : "http://packages.firegento.com"
-		}
+		}, {
+ 			"type": "vcs",
+ 			"url": "https://github.com/gregorybesson/magento-installer"
+ 		}, {
+ 			"type": "vcs",
+ 			"url": "https://github.com/gregorybesson/EcomDev_PHPUnit"
+ 		}
 	],
 	"scripts" : {
 		"post-install-cmd" : [
