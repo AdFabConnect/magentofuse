@@ -38,7 +38,7 @@ Much much more to come !
 #Usage
 ## Create a new project
 ```
-composer create-project adfab/magentofuse new-project
+composer create-project -s dev adfab/magentofuse new-project
 ```
 
 **BEWARE : Your Mysql account must have a password**
