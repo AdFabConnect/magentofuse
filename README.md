@@ -42,7 +42,7 @@ composer create-project -s dev adfab/magentofuse new-project
 ```
 
 **BEWARE : Your Mysql account must have a password**
-**BEWARE : In windows, open your command window as administrator (it is mandatory for the symbolic links creation)
+**BEWARE : In windows, open your command window as administrator (it is mandatory for the symbolic links creation)**
 
 This command will : 
 - Ask the Magento version you want to install then download it (be patient, Magento download servers are even slower than composer updates). Note version have to >= 1.9.0.0
