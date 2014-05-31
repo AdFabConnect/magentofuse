@@ -9,7 +9,7 @@ parameters:
     url: http://DOMAIN/
     admin_firstname: Admin
     admin_lastname: Admin
-    admin_email: admin@DOMAIN
+    admin_email: admin@test.com
     admin_username: admin
     admin_password: password
     install_sample: false
