@@ -46,7 +46,7 @@ composer create-project -s dev adfab/magentofuse new-project
 **BEWARE : In windows, open your command window as administrator (it is mandatory for the symbolic links creation)**
 
 This command will : 
-- Ask the Magento version you want to install then download it (be patient, Magento download servers are even slower than composer updates). Note version have to >= 1.9.0.0
+- Ask the Magento version you want to install then download it (be patient, Magento download servers are even slower than composer updates).
 - Install the PHPUnit module
 - Install the Grunt config
 - Enter the installation process : Answer each question including database config.
