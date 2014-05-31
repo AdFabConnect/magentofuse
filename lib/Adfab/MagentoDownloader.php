@@ -48,18 +48,17 @@ class MagentoDownloader {
     }
     
     public function extract() {
-        $varDir = $this->rootDir.'/var';
-        $tarFile = $varDir.'/magento.tar';
+        $varDir = $this->rootDir.DIRECTORY_SEPARATOR.'var';
+        $tarFile = $varDir.DIRECTORY_SEPARATOR.'magento.tar';
+
         if ( file_exists($tarFile) ) {
-            unlink($tarFile);
+			unlink($tarFile);
         }
+		
         $phar = new \PharData($this->filename);
         $phar->decompress();
         $phar = new \PharData($tarFile);
         $phar->extractTo($varDir,null, true);
-        if ( file_exists($tarFile) ) {
-            unlink($tarFile);
-        }
     }
 
     public function sync($dir = '') {
@@ -75,6 +74,14 @@ class MagentoDownloader {
                 }
             }
         }
+        
+		$tarFile = $this->rootDir.DIRECTORY_SEPARATOR.'var'.DIRECTORY_SEPARATOR.'magento.tar';
+
+		// We delete the uncompressed magento.tar file
+        if ( file_exists($tarFile) ) {
+			unlink($tarFile);
+        }
+
     }
     
     public static function validateVersion($version) {
