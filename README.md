@@ -42,6 +42,7 @@ composer create-project -s dev adfab/magentofuse new-project
 ```
 
 **BEWARE : Your Mysql account must have a password**
+
 **BEWARE : In windows, open your command window as administrator (it is mandatory for the symbolic links creation)**
 
 This command will : 
