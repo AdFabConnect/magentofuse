@@ -27,7 +27,7 @@ class MagentoDownloader {
         $this->io = $io;
     }
     
-    public function progress($resource,$download_size, $downloaded, $upload_size, $uploaded)
+    public function progress($download_size, $downloaded, $upload_size, $uploaded)
     {
         if($download_size > 0 && $this->io ) {
             $this->io->write('Download magento source file: '.round( $downloaded / $download_size  * 100, 2). '%'."\r", false);
