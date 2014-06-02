@@ -1,27 +1,10 @@
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     default_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
+/* Magento - Common
+
+Magento Common
+
+Styleguide 0
+*/
+
 @charset "UTF-8";
 
 /* ============================================ *
@@ -84,6 +67,25 @@ ul {
  * Typography
  * ============================================ */
 
+/* Magento - Common Typography
+
+Markup: <p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in semper orci, vitae porttitor lectus.</p>
+
+.h1 - h1 or class
+.h2 - h2 or class
+.h3 - h3 or class
+.h4 - h4 or class
+.h5 - h5 or class
+.h6 - h6 or class
+.availability.in-stock - In stock
+.availability.out-of-stock - Out of stock
+.success - Success
+.error - Error
+.notice - Notice
+
+Styleguide 0.1
+*/
+
 h1, .h1 { @include h1; }
 
 h2, .h2 { @include h2; }
@@ -132,6 +134,15 @@ h6, .h6 { @include h6; }
  * Page Titles
  */
 
+/* Magento - Common Titles
+
+Markup: <div class="page-title">
+    <h1>Lorem ipsum</h1>
+</div>
+
+Styleguide 0.2
+*/
+
 .page-title h1,
 .page-title h2,
 .product-name h1,
@@ -142,6 +153,25 @@ h6, .h6 { @include h6; }
 /* -------------------------------------------- *
  * Block Module
  */
+
+/* Magento - Common Blocks Module
+
+Markup: <div class="block">
+    <div class="block-title">
+        <strong>Block title</strong>
+    </div>
+    <div class="block-content">
+        <p class="block-subtitle">Block subtitle</p>
+        <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+        </ul>
+    </div>
+</div>
+
+Styleguide 0.3
+*/
 
 .block,
 .col-left-first {
@@ -312,6 +342,22 @@ body:not(.customer-account) .block:first-child .block-title {
 /* ============================================ *
  * Buttons
  * ============================================ */
+
+/* Magento - Common Buttons
+
+Markup: <div>
+    <button type="button" class="{$modifiers}">
+        <span>Lorem ipsum</span>
+    </button>
+</div>
+
+.button - Primary
+.button.button-secondary - Secondary
+.button2 - Button2
+.button.disabled - Disabled 
+
+Styleguide 0.4
+*/
 
 /* Secondary Buttons */
 .cart .buttons-set .button,
@@ -520,6 +566,18 @@ a.button:hover {
  * Button Sets
  */
 
+/* Magento - Common Button Set
+
+Markup: <div class="buttons-set">
+    <p class="back-link"><a href="#"><small>&laquo; </small>Back</a></p>
+    <button type="button" class="button"><span><span>Continue</span></span></button>
+    <button type="button" class="button"><span><span>Back</span></span></button>
+    <p class="required">Required</p>
+</div>
+
+Styleguide 0.5
+*/
+
 .buttons-set {
     clear: both;
     margin: $box-spacing 0 0;
@@ -575,6 +633,26 @@ a.button:hover {
  * Breadcrumbs
  */
 
+/* Magento - Common Breadcrumbs
+
+Markup: <div class="breadcrumbs">
+    <ul>
+        <li class="home">
+            <a href="#" title="Go to Home Page">Home</a>
+            <span>/ </span>
+        </li>
+        <li class="category4">
+            <a href="#" title="">Women</a>
+            <span>/ </span>
+        </li>
+        <li class="category10">
+            <strong>New Arrivals</strong>
+        </li>
+    </ul>
+</div>
+
+Styleguide 0.6
+*/
 .breadcrumbs {
     overflow: hidden;
     margin: -15px 0 15px;
@@ -617,6 +695,19 @@ a.button:hover {
 /* -------------------------------------------- *
  * Button - Remove / Previous
  */
+
+/* Magento - Common Button Remove / Previous
+
+Markup: <div>
+    <a href="#" class="{$modifiers}">Lorem ipsum</a>
+</div>
+
+.btn-remove - Remove
+.btn-remove.btn-remove2 - Remove2
+.btn-previous - Previous
+
+Styleguide 0.7
+*/
 
 .btn-remove,
 .btn-previous {
@@ -960,6 +1051,17 @@ a.button:hover {
  * Global Site Notice
  */
 
+/* Magento - Common Global Site Notice
+
+Markup: <div class="global-site-notice">
+    <div class="notice-inner">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet placerat mi. Vivamus ac posuere est.</p>
+    </div>
+</div>
+
+Styleguide 0.8
+*/
+
 .global-site-notice {
     background: $c-dark;
     color: $c-text-white;
@@ -1008,6 +1110,7 @@ a.button:hover {
 /* -------------------------------------------- *
  * Messages
  */
+
 .success {
     color: $c-success;
 }
@@ -1025,6 +1128,28 @@ a.button:hover {
 /* -------------------------------------------- *
  * Messages
  */
+
+/* Magento - Common Messages List
+
+Markup: <ul class="messages">
+    <li class="{$modifiers}">
+        <ul>
+            <li>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </li>
+            <li>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+.success-msg - Success Message
+.error-msg - Error Message
+.notice-msg - Notice Message
+
+Styleguide 0.9
+*/
 
 .messages {
     margin-bottom: $gap;
@@ -1168,6 +1293,24 @@ a.button:hover {
  * Price Box - Standard
  */
 
+/* Magento - Common Price Box
+
+Markup: <div class="price-box">
+    <span class="{$modifiers}">
+        <span class="label">Price Label:</span>
+        <span class="price">$99</span>
+    </span>
+</div>
+
+.price-excluding-tax - Excl Tax
+.price-including-tax - Incl Taw
+.old-price - Old Price
+.special-price - Special price
+.minimal-price-link - Minimal Price Link
+
+Styleguide 0.10
+*/
+
 .price-box {
     margin: $element-spacing 0;
     font-family: $f-stack-sans;
@@ -1253,6 +1396,18 @@ a.button:hover {
 /* -------------------------------------------- *
  * Tier Prices
  */
+
+/* Magento - Common Tiers Prices
+
+Markup: <ul class="tier-prices product-pricing">
+    <li>
+        Buy 3 with $10 discount each
+        <strong class="benefit">5%</strong>
+    </li>
+</ul>
+
+Styleguide 0.11
+*/
 
 .product-pricing,
 .tier-prices,
