@@ -2,6 +2,47 @@
 
 Magento footer
 
+Styleguide 3
+*/
+
+/* ============================================ *
+ * Footer
+ * ============================================ */
+
+/* -------------------------------------------- *
+ * Footer
+ */
+
+/* Magento - Footer blocks
+
+Magento footer blocks
+
+<h1>Result</h1>
+
+Markup: <div class="footer-container">
+    <div class="footer">
+       <div class="links">
+            <div class="block-title">
+                <strong><span>Company</span></strong>
+            </div>
+            <ul>
+                <li><a href="http://demo.magentocommerce.com/about-magento-demo-store/">About Us</a></li>
+                <li><a href="http://demo.magentocommerce.com/contacts/">Contact Us</a></li>
+                <li><a href="http://demo.magentocommerce.com/customer-service/">Customer Service</a></li>
+                <li><a href="http://demo.magentocommerce.com/privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <address class="copyright">Copyright</address>
+    </div>
+</div>
+
+Styleguide 3.1
+*/
+
+/* Magento - Footer subscribe
+
+Magento footer subscribe
+
 <h1>Result</h1>
 
 Markup: <div class="footer-container">
@@ -10,7 +51,7 @@ Markup: <div class="footer-container">
             <div class="block-title">
                 <strong><span>Newsletter</span></strong>
             </div>
-            <form action="" method="post" id="newsletter-validate-detail">
+            <form action="http://demo.magentocommerce.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
                 <div class="block-content">
                     <div class="form-subscribe-header">
                         <label for="newsletter">Sign Up for Our Newsletter:</label>
@@ -24,27 +65,39 @@ Markup: <div class="footer-container">
                 </div>
             </form>
         </div>
-        <div class="links">
+        <address class="copyright">Copyright</address>
+    </div>
+</div>
+
+Styleguide 3.2
+*/
+
+/* Magento - Footer social
+
+Magento footer social
+
+<h1>Result</h1>
+
+Markup: <div class="footer-container">
+    <div class="footer">
+        <div class="links social-media">
             <div class="block-title">
-                <strong><span>Company</span></strong>
+              <strong><span>Connect With Us</span></strong>
             </div>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Customer Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#"><em class="facebook"></em>Facebook</a></li>
+                <li><a href="#"><em class="twitter"></em>Twitter</a></li>
+                <li><a href="#"><em class="youtube"></em>YouTube</a></li>
+                <li><a href="#"><em class="pinterest"></em>Pinterest</a></li>
+                <li class="last"><a href="#"><em class="rss"></em>RSS</a></li>
             </ul>
         </div>
         <address class="copyright">Copyright</address>
     </div>
 </div>
 
-Styleguide 3
+Styleguide 3.3
 */
-
-/* -------------------------------------------- *
- * Footer
- */
 
 .footer,
 .footer button {
@@ -61,7 +114,126 @@ Styleguide 3
         padding-top: $trim-small;
     }
 
+    .block-title {
+        border-bottom: 0;
+        padding: 3px 0;
+    }
+
+    .block-title strong {
+        font-weight: normal;
+    }
+
+    .block-title,
+    address {
+        color: $c-text-primary;
+    }
+
+    .links {
+        float: left;
+        width: 17%;
+        padding: 0 $trim 0 0;
+        margin-bottom: $trim;
+
+        li {
+            word-break: break-all;
+            line-height: 1.4;
+            padding: 4px 0;
+        }
+
+        a {
+            color: $c-text;
+            &:hover {
+                color: $c-action;
+            }
+        }
+    }
+
+    .block-subscribe {
+        float: right;
+        width: 320px;
+        margin-bottom: $trim;
+    }
+
+    .links,
+    .block-subscribe {
+        text-transform: uppercase;
+        font-size: $f-size-xs;
+    }
+
+    .form-subscribe-header {
+        display: none;
+    }
+
+    /* -------------------------------------------- *
+     * Social icons
+     */
+
+    .links.social-media em {
+        background-image: url(../images/social_icons.png);
+        background-repeat: no-repeat;
+        width: 13px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 7px;
+    }
+
+    @include if-min-resolution(2) {
+        .links.social-media em {
+            background-image: url(../images/social_icons@2x.png);
+            background-size: 50px 125px;
+        }
+    }
+
+    @mixin footer-social-icon($class, $y, $height: 13) {
+        .links.social-media em.#{$class} {
+            background-position: 0 -#{$y}px;
+            height: #{$height}px;
+        }
+
+        .links.social-media a:hover em.#{$class} {
+            background-position: -25px -#{$y}px;
+        }
+    }
+
+    @include footer-social-icon(facebook, 0);
+    @include footer-social-icon(twitter, 24);
+    @include footer-social-icon(youtube, 49);
+    @include footer-social-icon(pinterest, 74, 15);
+    @include footer-social-icon(rss, 99);
+
     // ---------------------------------------------
+
+    .block-subscribe .input-box {
+        float: left;
+        width: percentage(210px/320px);
+        padding-top: 0;
+    }
+
+    .block-subscribe .input-text {
+        width: 100%;
+        border-right: 0;
+        @include border-radius(0);
+    }
+
+    .block-subscribe .block-content {
+        padding-top: 7px;
+
+        &:after {
+            @include clearfix;
+        }
+    }
+
+    .block-subscribe .actions {
+        float: left;
+        width: percentage(110px/320px);
+        margin: 0;
+    }
+
+    .block-subscribe .actions .button {
+        height: 30px;
+        line-height: 17px;
+        float: left;
+    }
 
     .bugs,
     address {
@@ -142,11 +314,3 @@ Styleguide 3
         }
     }
 }
-
-/* -------------------------------------------- *
- * Footer imports
- */
-
-@import "footer/footer-subscribe";
-@import "footer/footer-social";
-@import "footer/footer-blocks";

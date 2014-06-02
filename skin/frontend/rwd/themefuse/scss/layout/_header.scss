@@ -3,6 +3,31 @@
 Styleguide 4
 */
 
+/* Magento - Header switcher
+
+Magento Header switcher
+
+<h1>Result</h1>
+
+Markup: <div class="header-language-background">
+    <div class="header-language-container">
+        <div class="store-language-container">
+            <div class="form-language">
+                <label for="select-language">Your Language:</label>
+                <select id="select-language" title="Your Language">
+                    <option value="" selected="selected">English</option>
+                    <option value="">French</option>
+                    <option value="">German</option>
+                </select>
+            </div>
+        </div>
+        <p class="welcome-msg">Welcome</p>
+    </div>
+</div>
+
+Styleguide 4.1
+*/
+
 /* ============================================ *
  * Header
  * ============================================ */
@@ -21,11 +46,53 @@ Styleguide 4
 
 }
 
+.header-language-container,
+.page-header {
+    font-family: $f-stack-special;
+}
+
 /* ============================================ *
  * Language switcher + welcome message
  * ============================================ */
 
-@import "header-switcher";
+.header-language-background {
+    padding: $gap;
+    background-color: $c-action;
+    text-transform: uppercase;
+
+    .header-language-container {
+        max-width: $max-content-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &:after {
+        @include clearfix;
+    }
+
+    .form-language,
+    .currency-switcher {
+        float: left;
+        margin-right: $gap;
+    }
+
+    .welcome-msg {
+        float: right;
+    }
+}
+
+.page-header-container .store-language-container {
+    float: right;
+    max-width: 35%;
+    padding: 13px 15px 10px 10px;
+
+    label {
+        display: none;
+    }
+    select {
+        max-width: 100%;
+    }
+}
 
 @include bp(max-width, $bp-xsmall) {
     .page-header-container .store-language-container {
@@ -37,6 +104,12 @@ Styleguide 4
         }
     }
 }
+
+.header-language-background,
+.header-language-background a {
+    color: $c-text-white;
+}
+
 @include bp(max-width, $bp-medium) {
 
     .header-language-background {
@@ -49,7 +122,44 @@ Styleguide 4
  * Logo
  * ============================================ */
 
-@import "logo";
+/* Magento - Header Logo
+
+Magento header Logo
+
+<h1>Result</h1>
+
+Markup: <a class="logo" href="#">
+    <img src="http://placehold.it/272x90" alt="" class="large">
+    <img src="http://placehold.it/453x44" alt="" class="small">
+</a>
+
+Styleguide 4.2
+*/
+
+.logo {
+    display: block;
+    float: left;
+    width: 65%;
+    min-width: 100px;
+    min-height: 44px;
+    text-align: center;
+    padding: $gap;
+
+    img {
+        max-width: 100%;
+    }
+
+    .small {
+        display: block;
+    }
+    .large {
+        display: none;
+    }
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
 
 // ---------------------------------------------
 
