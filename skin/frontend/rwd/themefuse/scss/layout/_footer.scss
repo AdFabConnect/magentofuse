@@ -26,10 +26,10 @@ Markup: <div class="footer-container">
                 <strong><span>Company</span></strong>
             </div>
             <ul>
-                <li><a href="http://demo.magentocommerce.com/about-magento-demo-store/">About Us</a></li>
-                <li><a href="http://demo.magentocommerce.com/contacts/">Contact Us</a></li>
-                <li><a href="http://demo.magentocommerce.com/customer-service/">Customer Service</a></li>
-                <li><a href="http://demo.magentocommerce.com/privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Customer Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
             </ul>
         </div>
         <address class="copyright">Copyright</address>
@@ -51,7 +51,7 @@ Markup: <div class="footer-container">
             <div class="block-title">
                 <strong><span>Newsletter</span></strong>
             </div>
-            <form action="http://demo.magentocommerce.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+            <form action="#" method="post" id="newsletter-validate-detail">
                 <div class="block-content">
                     <div class="form-subscribe-header">
                         <label for="newsletter">Sign Up for Our Newsletter:</label>
