@@ -1,27 +1,38 @@
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     default_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
+/* Magento - Slideshow
+
+Magento Slideshow
+
+<h1>Result</h1>
+
+Markup:
+<div class="slideshow-container">
+    <ul class="slideshow">
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/350x170/ffffff" alt="" />
+            </a>
+            <div class="banner-msg">
+                <h2>Title</h2>
+                <p>Content</p>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <img src="http://placehold.it/350x170/000000" alt="" />
+            </a>
+            <div class="banner-msg">
+                <h2>Title</h2>
+                <p>Content</p>
+            </div>
+        </li>
+    </ul>
+    <div class="slideshow-pager">&nbsp;</div>
+    <span class="slideshow-prev">&nbsp;</span>
+    <span class="slideshow-next">&nbsp;</span>
+</div>
+
+Styleguide 8
+*/
 
 /* ============================================ *
  * Slideshow
