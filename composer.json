@@ -10,13 +10,9 @@
 		"composer/composer" : "dev-master",
 		"incenteev/composer-parameter-handler" : "@stable",
 		"ivanchepurnyi/ecomdev_phpunit" : "dev-dev",
-		"laurent35240/magento-sass" : "dev-master",
-		"leafo/lessphp": "0.4.*@dev",
-		"leafo/scssphp": "dev-master",
 		"magento-hackathon/magento-composer-installer" : "@stable",
 		"magento-hackathon/composer-command-integrator" : "dev-master",
 		"mikey179/vfsStream" : "*",
-		"richthegeek/phpsass" : "dev-master",
 		"webgriffe/magento-installer" : "dev-master"
 	},
 	"require-dev" : {
