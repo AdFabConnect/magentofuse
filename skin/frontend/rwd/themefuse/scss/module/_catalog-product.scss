@@ -599,6 +599,70 @@ Styleguide 6.2
     }
 }
 
+/* Magento - Product view collateral
+
+Magento Product view collateral
+
+<h1>Result</h1>
+
+Markup: <div class="product-collateral toggle-content tabs">
+    <dl id="collateral-tabs" class="collateral-tabs">
+        <dt class="tab current">
+            <span>Description</span>
+        </dt>
+        <dd class="tab-container current">
+            <div class="tab-content">
+                <h2>Details</h2>
+                <div class="std">
+                    Loose fitting from the shoulders, open weave knit top. Semi sheer.
+                    Slips on. Faux button closure detail on the back. Linen/Cotton. Machine wash.
+                </div>
+            </div>
+         </dd>
+         <dt class="tab">
+            <span>Additional Information</span>
+        </dt>
+        <dd class="tab-container">
+            <div class="tab-content">
+                <h2>Additional Information</h2>
+                <table class="data-table" id="product-attribute-specs-table">
+                    <colgroup>
+                        <col width="25%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr class="first odd">
+                            <th class="label">Occasion</th>
+                            <td class="data last">Casual</td>
+                        </tr>
+                        <tr class="even">
+                            <th class="label">Type</th>
+                            <td class="data last">Knits</td>
+                        </tr>
+                        <tr class="last odd">
+                            <th class="label">Gender</th>
+                            <td class="data last">Female</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </dd>
+        <dt class="tab last">
+            <span>Reviews</span>
+        </dt>
+        <dd class="tab-container last">
+            <div class="tab-content">
+                <div class="box-collateral box-reviews" id="customer-reviews">
+                    <p class="no-rating"><a href="#">Be the first to review this product</a></p>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</div>
+
+Styleguide 6.3
+*/
+
 .product-collateral {
     clear: both;
 }
@@ -965,7 +1029,7 @@ Markup: <div class="block block-related">
     </div>
 </div>
 
-Styleguide 6.3
+Styleguide 6.4
 */
 
 .block-related {
