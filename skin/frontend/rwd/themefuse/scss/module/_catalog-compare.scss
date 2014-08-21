@@ -1,27 +1,169 @@
-/**
- * Magento
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Academic Free License (AFL 3.0)
- * that is bundled with this package in the file LICENSE_AFL.txt.
- * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/afl-3.0.php
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@magentocommerce.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade Magento to newer
- * versions in the future. If you wish to customize Magento for your
- * needs please refer to http://www.magentocommerce.com for more information.
- *
- * @category    design
- * @package     default_default
- * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
- * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
- */
+/* Magento - Compare
+
+Magento Compare
+
+<h1>Result</h1>
+
+Markup: <table class="data-table compare-table" id="product_comparison">
+  <colgroup>
+    <col width="1">
+    <col width="50%">
+    <col width="50%">
+  </colgroup>
+  <tbody>
+    <tr class="product-shop-row top first odd">
+      <th>&nbsp;</th>
+      <td>
+        <a class="product-image" href="#" title="Isla Crossbody Handbag">
+          <img src="http://placehold.it/125x125/" width="125" height="125" alt="Isla Crossbody Handbag">
+        </a>
+        <h2 class="product-name">
+          <a href="#" title="Isla Crossbody Handbag">Isla Crossbody Handbag</a>
+        </h2>
+        <div class="ratings">
+          <div class="rating-box">
+            <div class="rating" style="width:90%"></div>
+          </div>
+          <span class="amount">
+            <a href="#">4 Review(s)</a>
+          </span>
+        </div>
+        <div class="price-box">
+          <span class="regular-price" id="product-price-370-compare-list-top">
+            <span class="price">$290.00</span>
+          </span>
+        </div>
+      </td>
+      <td class="last">
+        <a class="product-image" href="#" title="Flatiron Tablet Sleeve">
+          <img src="http://placehold.it/125x125/" width="125" height="125" alt="Flatiron Tablet Sleeve">
+        </a>
+        <h2 class="product-name">
+          <a href="#" title="Flatiron Tablet Sleeve">Flatiron Tablet Sleeve</a>
+        </h2>
+        <div class="price-box">
+          <span class="regular-price" id="product-price-372-compare-list-top">
+            <span class="price">$150.00</span>
+          </span>
+        </div>
+      </td>
+    </tr>
+    <tr class="product-shop-row bottom even">
+      <th>&nbsp;</th>
+      <td>
+        <p>
+          <button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+        </p>
+        <ul class="add-to-links">
+          <li><a href="#" class="link-wishlist">Add to Wishlist</a></li>
+        </ul>
+      </td>
+      <td class="last">
+        <p>
+          <button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+        </p>
+        <ul class="add-to-links">
+          <li><a href="#" class="link-wishlist">Add to Wishlist</a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="odd">
+      <th>
+        <span class="nobr">Description</span>
+      </th>
+      <td>
+        <div class="std">
+           Pebbled leather. Contrast stitching. Fold over flap with Fasten closure. Crossbody strap. 6" x 8" x 0.75".
+        </div>
+      </td>
+      <td class="last">
+        <div class="std">
+           Pebble textured leather tabled case. Top zip closure. Exterior zipper pocket. Fully lined with back wall slip pocket. 8.75" x 11" x .5". Imported.
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <th>
+        <span class="nobr">Short Description</span>
+      </th>
+      <td>
+        <div class="std">
+           Form follows function with this decidedly chic mini bag.
+        </div>
+      </td>
+      <td class="last">
+        <div class="std">
+           Protect your tablet with our minimal tablet sleeve.
+        </div>
+      </td>
+    </tr>
+    <tr class="odd">
+      <th>
+        <span class="nobr">SKU</span>
+      </th>
+      <td>
+        <div class="std">
+           abl000
+        </div>
+      </td>
+      <td class="last">
+        <div class="std">
+           abl002
+        </div>
+      </td>
+    </tr>
+    <tr class="even">
+      <th>
+        <span class="nobr">Color</span>
+      </th>
+      <td>
+        <div class="std">
+           Black
+        </div>
+      </td>
+      <td class="last">
+        <div class="std">
+           Black
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr class="add-to-row last odd">
+      <th>&nbsp;</th>
+      <td>
+        <div class="price-box">
+          <span class="regular-price" id="product-price-370-compare-list-bottom">
+          <span class="price">$290.00</span></span>
+        </div>
+        <p>
+          <button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+        </p>
+        <ul class="add-to-links">
+          <li><a href="#" class="link-wishlist">Add to Wishlist</a></li>
+        </ul>
+      </td>
+      <td class="last">
+        <div class="price-box">
+          <span class="regular-price" id="product-price-372-compare-list-bottom">
+            <span class="price">$150.00</span>
+          </span>
+        </div>
+        <p>
+          <button type="button" title="Add to Cart" class="button btn-cart"><span><span>Add to Cart</span></span></button>
+        </p>
+        <ul class="add-to-links">
+          <li><a href="#" class="link-wishlist">Add to Wishlist</a></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Styleguide 9
+*/
 
 /* ============================================ *
  * Catalog - Compare
