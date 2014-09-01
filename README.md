@@ -195,6 +195,10 @@ Don't forget to activate the symlinks in System/configuration/Developer/Allow Sy
 
 If you forget to do that, the render of your templates will fail silently :P
 
+If you want to reapply your symlinks, just do :
+
+``` ./vendor/bin/composerCommandIntegrator.php magento-module-deploy
+
 ---
 
 ### Add this module directory in your IDE
